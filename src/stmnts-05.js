@@ -13,6 +13,7 @@
  */
 function isOdd(num) {
   // write your code here & return
+  return num % 2 !== 0;
 }
 
 /**
@@ -22,6 +23,7 @@ function isOdd(num) {
  */
 function isEven(num) {
   // write your code here & return
+  return num % 2 === 0;
 }
 
 /**
@@ -31,6 +33,7 @@ function isEven(num) {
  */
 function isNegative(value) {
   // write your code here & return
+  return typeof value === 'number' && value < 0;
 }
 
 module.exports = {

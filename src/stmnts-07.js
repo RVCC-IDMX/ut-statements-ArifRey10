@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /*
  * stmnts-07.js
  * Language: javascript
@@ -14,6 +15,7 @@
  */
 function logicalAnd(a, b) {
   // write your code here & return
+  return Boolean(a) && Boolean(b);
 }
 
 /**
@@ -24,6 +26,7 @@ function logicalAnd(a, b) {
  */
 function logicalOr(a, b) {
   // write your code here & return
+  return Boolean(a) || Boolean(b);
 }
 
 /**
@@ -33,6 +36,7 @@ function logicalOr(a, b) {
  */
 function invertBoolean(bool) {
   // write your code here & return
+  return !bool;
 }
 
 /**
@@ -50,6 +54,15 @@ function invertBoolean(bool) {
  */
 function numberOfOdds(num) {
   // write your code here & return
+  let count = 0;
+
+  for (let i = 0; i < num; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+
+  return count;
 }
 
 /**
@@ -63,6 +76,13 @@ function numberOfOdds(num) {
  */
 function addUpTheNumbers(num) {
   // write your code here & return
+  let sum = 0;
+
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+
+  return sum;
 }
 
 /**
@@ -72,16 +92,28 @@ function addUpTheNumbers(num) {
  * ? score is a positive integer 0 through 100
  * ? generate a letter grade based on the following
  * ? table
- * ? < 60	F
- * ? < 70	D
- * ? < 80	C
- * ? < 90	B
- * ? <= 100	A
+ * ? < 60F
+ * ? < 70D
+ * ? < 80C
+ * ? < 90B
+ * ? <= 100A
  * ? return the letter grade as a string
  * ?
  */
 function gradeGenerator(score) {
   // write your code here & return
+  if (score < 0 || score > 100) {
+    return 'Invalid score';
+  } if (score < 60) {
+    return 'F';
+  } if (score < 70) {
+    return 'D';
+  } if (score < 80) {
+    return 'C';
+  } if (score < 90) {
+    return 'B';
+  }
+  return 'A';
 }
 
 /**
@@ -102,6 +134,9 @@ function gradeGenerator(score) {
  */
 function getGrade(name, score) {
   // write your code here & return
+  const letterGrade = gradeGenerator(score);
+  const article = letterGrade === 'A' || letterGrade === 'F' ? 'an' : 'a';
+  return `${name} got ${article} ${letterGrade}`;
 }
 
 module.exports = {

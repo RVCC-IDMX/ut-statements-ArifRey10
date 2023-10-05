@@ -13,6 +13,7 @@
  */
 function isString(str) {
   // write your code here & return
+  return typeof str === 'string';
 }
 
 /**
@@ -20,8 +21,14 @@ function isString(str) {
  * @param {string} str - the string to check
  * @returns {boolean}  - true if str is blank (empty)
  */
+// eslint-disable-next-line consistent-return
 function isBlank(str) {
   // write your code here & return
+  if (typeof str !== 'string') {
+    return false;
+  }
+
+  return str === '';
 }
 
 /**
@@ -34,6 +41,8 @@ function isBlank(str) {
  */
 function sayHelloOrBye(name, num) {
   // write your code here & return
+  const greeting = num === 0 ? 'Hello ' : 'Bye ';
+  return greeting + name;
 }
 
 /**
@@ -45,6 +54,7 @@ function sayHelloOrBye(name, num) {
  */
 function compareStrings(str1, str2) {
   // write your code here & return
+  return str1 === str2;
 }
 
 module.exports = {
